@@ -10,16 +10,20 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
 
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+      - paths:
+        - /sripts/example.py
+    </py-env>
   </head>
 
   <body>
-    Hello world! <br>
-    This is the current date and time, as computed by Python:
+    <h1>Let's print random numbers</h1>
+    <b>Doe's lucky number is <label id="lucky"></label></b>
     <py-script>
-from datetime import datetime
-now = datetime.now()
-now.strftime("%m/%d/%Y, %H:%M:%S")
+      from example import generate_random_number
+      pyscript.write('lucky', generate_random_number())
     </py-script>
+
     <py-repl id="my-repl" auto-generate=true> </py-repl>
   </body>
 </html>
