@@ -21,7 +21,14 @@
     <h1>Let's print random numbers</h1>
     <b>Doe's lucky number is <label id="lucky"></label></b>
     <py-script>
-      from t import generate_random_number
+      from random import randint
+
+      def add_two_numbers(x, y):
+          return x + y
+
+      def generate_random_number():
+          x = randint(0, 10)
+          return x
       pyscript.write('lucky', generate_random_number())
     </py-script>
 
